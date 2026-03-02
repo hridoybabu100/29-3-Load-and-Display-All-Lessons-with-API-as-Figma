@@ -1,11 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English||Janala</title>
+
+    <!-- Font - Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Goggle - Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Tainwind + daisyUI  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Style - CSS  -->
+    <link rel="stylesheet" href="./style.css">
+
 </head>
+
 <body>
-    
+
+    <!-- Navigation bar  -->
+    <header class="">
+        <div class="navbar flex justify-between bg-base-100 w-[96%] lg:w-[85%] mx-auto">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+                        <li>
+                            <button class=""><i class="fa-solid fa-circle-question"></i> FAQ</button>
+                            <button class=""><i class="fa-solid fa-book-open"></i> Learn</button>
+                            <button class=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Loggout</button>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class=" flex gap-1 items-center">
+                    <span class="font-semibold">English</span>
+                    <img src="./english-janala-resources/assets/logo.png" alt="">
+                    <span>জানালা</span>
+                </div>
+                <!-- <a class="btn btn-ghost text-xl">daisyUI</a> -->
+            </div>
+
+            <div class=" hidden lg:flex">
+                <ul class="5">
+                    <button class="btn btn-outline btn-secondary"><i class="fa-solid fa-circle-question"></i>
+                        FAQ</button>
+                    <button class="btn btn-outline btn-secondary"><i class="fa-solid fa-book-open"></i> Learn</button>
+                    <button class="btn btn-outline btn-secondary"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Loggout</button>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <main class="w-[96%] lg:w-[85%] mx-auto">
+        <!-- Hero - Section code  -->
+        <section class="flex flex-col-reverse md:flex-row justify-between gap-4 items-center ">
+
+            <div class="letf space-y-4 text-center md:text-left">
+                <h1 class="text-[48px] font-bold text-black"><span class="text-[#00BCFF]">Englis</span> is Easy</h1>
+                <p class="font-medium text-[#18181B]">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ</p>
+                <input class="p-1 rounded-sm" type="text" name="" placeholder="Enter Your Name" id=""> <br>
+                <input class="p-1 rounded-sm" type="text" name="" placeholder=".................." id=""> <br>
+                <button class="btn btn-active btn-primary">
+                        Get Started</button>
+            </div>
+            <div class="right flex justify-center items-center">
+                <img src="./english-janala-resources/assets/hero-student.png" alt="">
+            </div>
+
+        </section>
+
+        <!-- Vocabulary - Section Code  -->
+         <section>
+             <h1 class="text-[48px] font-bold text-black text-center py-10"><span class="text-[#00BCFF]">Lets</span> Learn Vocabularies</h1>
+
+
+             <!-- lession contant  -->
+             <div id="Lession-Container" class="flex gap-2 flex-wrap pb-10 items-center justify-center">
+
+             </div>
+         </section>
+
+
+         <!-- messegge seclected  -->
+          <section class="bg-[#F8F8F8] p-10 mb-30 rounded-md text-center space-y-3">
+            <span>একটি Lesson Select করুন।</span>
+            <p>আপনি এখনো কোন Lesson Select করেন ন</p>
+          </section>
+
+
+          <!-- FAQ section code  -->
+           <section>
+             <h1 class="text-[48px] font-bold text-black text-center mb-20"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
+
+             <div class="flex justify-between bg-[#F8F8F8] p-10 rounded-md mb-5">
+                <div>
+                    <p class="font-medium text-black">1. How can I start learning English on this website?</p>
+                    <p class="">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p>
+                </div>
+                <i class="fa-solid fa-minus"></i>
+             </div>
+             <div class="flex justify-between bg-[#F8F8F8] p-10 rounded-md mb-5">
+                <div>
+                    <!-- <p class="font-medium text-black">1. How can I start learning English on this website?</p> -->
+                    <p class="font-medium text-black">2. Is this website free to use?</p>
+                </div>
+                <i class="fa-solid fa-plus"></i>
+             </div>
+             <div class="flex justify-between bg-[#F8F8F8] p-10 rounded-md mb-5">
+                <div>
+                    <p class="font-medium text-black">3. Do I need to create an account?</p>
+                    <!-- <p class="">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p> -->
+                </div>
+                <i class="fa-solid fa-plus"></i>
+             </div>
+             <div class="flex justify-between bg-[#F8F8F8] p-10 rounded-md mb-5">
+                <div>
+                    <p class="font-medium text-black">4. How can I build my English vocabulary?</p>
+                    <!-- <p class="">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p> -->
+                </div>
+                <i class="fa-solid fa-plus"></i>
+             </div>
+             <div class="flex justify-between bg-[#F8F8F8] p-10 rounded-md mb-5">
+                <div>
+                    <p class="font-medium text-black">5. Do you offer certificates for completed courses?</p>
+                    <!-- <p class="">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p> -->
+                </div>
+                <i class="fa-solid fa-plus"></i>
+             </div>
+
+           </section>
+
+    </main>
+
+    <!-- Footer section code  -->
+     
+
+
+
+
+
+    <!-- JavaScripts Connected  -->
+    <script src="./script/index.js"></script>
 </body>
+
 </html>
