@@ -48,15 +48,24 @@ const loadDisplay = (words) => {
     // Main container add.
     const wordContainer = document.getElementById("load-word-Container");
     wordContainer.innerHTML = " ";
+    if ( words.length == 0){
+        wordContainer.innerHTML = `
+              <div class="bg-gray-100 col-span-full space-y-3 p-10">
+                <img class="mx-auto" src="../english-janala-resources/assets/alert-error.png" alt="">
+                <p class="text-black font-medium">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                <p class="text-black font-bold text-4xl">নেক্সট Lesson এ যান</p>
+             </div> 
+        `;
+    }
   
     for ( const word of words ){
         // new div create
         const newdiv = document.createElement('div');
         newdiv.innerHTML = `
               <div id="word-card" class="bg-white py-15 px-5 rounded-md shadow-md space-y-4">
-                <p class="font-bold text-black text-[20px]">Eager${word.word}</p>
-                <p class="text-black">Meaning /Pronounciation ${word.pronunciation}</p>
-                <p class="font-bold text-black text-[20px]">"আগ্রহী / ইগার" ${word.meaning}</p>
+                <p class="font-bold text-black text-[20px]">${word.word ? word.word : "Found Not" }</p>
+                <p class="text-black"> ${word.pronunciation}</p>
+                <p class="font-bold text-black text-[20px]"> ${word.meaning ? word.meaning  : "Found Not"} / ${word.pronunciation ? word.pronunciation  :"Found Not"}</p>
                 <div class="flex justify-between items-center gap-5">
                     <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
                     <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high "></i></button>     
