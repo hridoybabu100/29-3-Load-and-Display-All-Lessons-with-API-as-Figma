@@ -69,6 +69,8 @@
 
         </div>
     </header>
+
+
     <main class="w-[96%] lg:w-[85%] mx-auto">
         <!-- Hero - Section code  -->
         <section class="flex flex-col-reverse md:flex-row justify-between gap-4 items-center ">
@@ -101,6 +103,16 @@
             </div>
         </section>
 
+        <section class="flex justify-center pb-15">
+            <div class="join">
+                <div>
+                    <label class="input validator join-item">
+                        <input id="search-input" type="email" placeholder="search" required />
+                    </label>
+                </div>
+                <button id="search-btn" class="btn btn-neutral join-item">Search</button>
+            </div>
+        </section>
 
         <!-- messegge seclected  -->
         <section id="load-word-Container"
@@ -117,18 +129,8 @@
             <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
             <dialog id="my_modal_5" class="modal modal-middle sm:modal-middle">
                 <div class="modal-box">
-                    <div class="shadow-md p-5 space-y-3">
-                        <h3 class="text-lg font-bold">Eager (  :ইগার)</h3>
-                        <p class="py-4">Meaning</p>
-                        <p>আগ্রহী</p>
-                        <h3>Example</h3>
-                        <h2>The kids were eager to open their gifts.</h2>
-                        <h2>সমার্থক শব্দ গুলো</h2>
-                        <div class="flex items-center gap-2">
-                            <button class="btn bg-[#EDF7FF] text-black">keen</button>
-                            <button class="btn bg-[#EDF7FF] text-black">excited</button>
-                            <button class="btn bg-[#EDF7FF] text-black">Enthusiastic</button>
-                        </div>
+                    <div id="infoContainer" class="space-y-5 shadow-md p-6">
+
                     </div>
                     <div class="modal-action flex justify-between">
                         <button class="btn bg-[#422AD5] text-white">Complete Learning</button>

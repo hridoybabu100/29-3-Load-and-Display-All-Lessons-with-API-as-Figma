@@ -1,4 +1,10 @@
 // console.log("JavaScript Conneted");
+const createElement = (arr) => {
+    const createHtml = arr.map((el) => `<span class="btn" >${el}</span>`);
+     return createHtml.join(" ");
+    
+}
+
 
 const lessionData = () => {
     const url = "https://openapi.programming-hero.com/api/levels/all"
@@ -6,12 +12,14 @@ const lessionData = () => {
     .then((res) => res.json())
     .then((data) => displayLession(data.data))
 }
-lessionData();
-// {
-//     "id": 101,
-//     "level_no": 1,
-//     "lessonName": "Basic Vocabulary"
-// }
+
+
+// "id": 4,
+// "level": 5,
+// "word": "Diligent",
+// "meaning": "পরিশ্রমী",
+// "pronunciation": "ডিলিজেন্ট"
+
 const displayLession = (lessions) => {
     // console.log(lessions); 
     // jeikhne rakhbo oi div take Conneted korte hbe.
@@ -57,7 +65,39 @@ const loadbtn = (id) => {
 }
 
 
+// infor btn Data
+const infoLoadBtn = (id) =>{
+    const url = `https://openapi.programming-hero.com/api/word/${id}`
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => infoDisplay(data.data) )
+    
+}
+// info Display
 
+ const infoDisplay = (word) => {
+    const infoContainer = document.getElementById('infoContainer');
+    infoContainer.innerHTML = `
+                <div>
+                     <h1 class="text-2xl text-black font-bold">${word.word} (<i class="fa-solid fa-microphone"></i> :${word.pronunciation})</h1>
+                     <p class="font-bold">${word.meaning}</p>
+                </div>
+                <div>
+                   <p class="font-bold">Example</p>
+                   <p>${word.sentence}</p>
+                </div>
+                <div>
+                    <h2 class="font-bold">সমার্থক শব্দ গুলো</h2>
+                    <div>${createElement(word.synonyms)}</div>
+                </div>
+                    
+                    
+   
+        `
+      document.getElementById('my_modal_5').showModal();
+    
+ }
+// infoLoadBtn();
 const loadDisplay = (words) => {
     // Main container add.
     const wordContainer = document.getElementById("load-word-Container");
@@ -81,7 +121,7 @@ const loadDisplay = (words) => {
                 <p class="text-black"> ${word.pronunciation}</p>
                 <p class="font-bold text-black text-[20px]"> ${word.meaning ? word.meaning  : "Found Not"} / ${word.pronunciation ? word.pronunciation  :"Found Not"}</p>
                 <div class="flex justify-between items-center gap-5">
-                    <button onclick="my_modal_5.showModal()" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
+                    <button onclick="infoLoadBtn(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
                     <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high "></i></button>     
                 </div>
             </div>
@@ -94,3 +134,16 @@ const loadDisplay = (words) => {
    
      
 }
+
+// input feild
+document.getElementById('search-btn').addEventListener('click', () => {
+    removeActive();
+    const input = document.getElementById('search-input');
+    const searchValue = input.value.trim().toLowerCase() ;
+    console.log(searchValue);
+
+    
+
+})
+
+lessionData();
