@@ -76,7 +76,8 @@
             <div class="letf space-y-4 text-center md:text-left">
                 <h1 class="text-[48px] font-bold text-black"><span class="text-[#00BCFF]">Englis</span> is Easy</h1>
                 <p class="font-medium text-[#18181B]">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
-                    <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ</p>
+                    <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ
+                </p>
                 <input class="p-1 rounded-sm" type="text" name="" placeholder="Enter Your Name" id=""> <br>
                 <input class="p-1 rounded-sm" type="text" name="" placeholder=".................." id=""> <br>
                 <button class="btn btn-active btn-primary">
@@ -102,12 +103,42 @@
 
 
         <!-- messegge seclected  -->
-        <section id="load-word-Container" class="bg-[#F8F8F8] p-10 mb-30 rounded-md grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-center">
+        <section id="load-word-Container"
+            class="bg-[#F8F8F8] p-10 mb-30 rounded-md grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-center">
             <!-- FAQ section code  -->
-             <div class="bg-gray-100 col-span-full space-y-3 p-10">
+            <div class="bg-gray-100 col-span-full space-y-3 p-10">
                 <p class="text-black font-medium">আপনি এখনো কোন Lesson Select করেন ন</p>
                 <p class="text-black font-bold text-4xl">একটি Lesson Select করুন।</p>
-             </div>        
+            </div>
+        </section>
+
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+            <dialog id="my_modal_5" class="modal modal-middle sm:modal-middle">
+                <div class="modal-box">
+                    <div class="shadow-md p-5 space-y-3">
+                        <h3 class="text-lg font-bold">Eager (  :ইগার)</h3>
+                        <p class="py-4">Meaning</p>
+                        <p>আগ্রহী</p>
+                        <h3>Example</h3>
+                        <h2>The kids were eager to open their gifts.</h2>
+                        <h2>সমার্থক শব্দ গুলো</h2>
+                        <div class="flex items-center gap-2">
+                            <button class="btn bg-[#EDF7FF] text-black">keen</button>
+                            <button class="btn bg-[#EDF7FF] text-black">excited</button>
+                            <button class="btn bg-[#EDF7FF] text-black">Enthusiastic</button>
+                        </div>
+                    </div>
+                    <div class="modal-action flex justify-between">
+                        <button class="btn bg-[#422AD5] text-white">Complete Learning</button>
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </section>
 
 

@@ -4,3 +4,7 @@
 body{
     /* background-color: #F8F8F8; */
 }
+.active{
+    background-color: #422AD5;
+    color: white;
+}

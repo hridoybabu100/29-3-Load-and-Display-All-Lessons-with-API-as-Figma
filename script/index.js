@@ -20,12 +20,12 @@ const displayLession = (lessions) => {
     lessionConatiner.innerHTML = " ";
     
     for ( const lession of lessions){
-        console.log(lession);
+        // console.log(lession);
         
         // Eikhne new dive Create korte hbe
         const btnDiv = document.createElement("div")
         btnDiv.innerHTML = `
-        <button onclick="loadbtn(${lession.level_no})" class="btn btn-outline btn-secondary"><i class="fa-solid fa-book-open"></i> Learn - ${lession.level_no}
+        <button id="lessionBtn-${lession.level_no}" onclick="loadbtn(${lession.level_no})" class="btn btn-outline btn-secondary lession-btn "><i class="fa-solid fa-book-open"></i> Learn - ${lession.level_no}
         </button>
 
         `;
@@ -35,13 +35,27 @@ const displayLession = (lessions) => {
     
 }
 // loda buttom section code start
+ const removeActive = () => {
+    const allbuttons = document.querySelectorAll('.lession-btn');
+    // console.log(allbuttons);
+    allbuttons.forEach((btn) => btn.classList.remove("active"));
+    
+ }
 
 const loadbtn = (id) => {
     const url = `https://openapi.programming-hero.com/api/level/${id}`
     fetch(url)
     .then((res) => res.json())
-    .then((data) => loadDisplay(data.data))
+    .then((data) => {
+        const lessionToggolebtn = document.getElementById(`lessionBtn-${id}`)
+        // console.log(lessionToggolebtn);
+        removeActive();
+        lessionToggolebtn.classList.add('active');
+        //Ekhn sob gulai ei active sellected hoitache. 
+        loadDisplay(data.data)
+    })
 }
+
 
 
 const loadDisplay = (words) => {
@@ -67,7 +81,7 @@ const loadDisplay = (words) => {
                 <p class="text-black"> ${word.pronunciation}</p>
                 <p class="font-bold text-black text-[20px]"> ${word.meaning ? word.meaning  : "Found Not"} / ${word.pronunciation ? word.pronunciation  :"Found Not"}</p>
                 <div class="flex justify-between items-center gap-5">
-                    <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
+                    <button onclick="my_modal_5.showModal()" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
                     <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high "></i></button>     
                 </div>
             </div>
