@@ -135,15 +135,23 @@ const loadDisplay = (words) => {
      
 }
 
+lessionData();
+
 // input feild
 document.getElementById('search-btn').addEventListener('click', () => {
     removeActive();
     const input = document.getElementById('search-input');
-    const searchValue = input.value.trim().toLowerCase() ;
-    console.log(searchValue);
+    const searchValue = input.value.trim().toLowerCase();
+    // console.log(searchValue); 
+    fetch("https://openapi.programming-hero.com/api/words/all")
+    .then((res) => res.json())
+    .then((data) => {
+        const allwords = data.data ;
+        const filterwords = allwords.filter((word) => word.word.toLowerCase().includes(searchValue));
+        // console.log(filterwords);
+        loadDisplay(filterwords) ;   
+    })
 
     
 
 })
-
-lessionData();
